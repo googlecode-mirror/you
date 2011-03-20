@@ -1,0 +1,243 @@
+======================================================================
+
+   Ionize 0.9.6 TODOS
+
+======================================================================
+
+
+   - Ionize tags can be added in articles HTML content.
+   
+   - Other texteditor than tinyMCE.
+   
+   - A new files and images manager
+
+
+
+======================================================================
+
+   Ionize 0.9.5 CHANGE LOG
+
+======================================================================
+
+
+1. Global
+  =======================================
+   
+   - New version... new design !
+     Some design improvment were done.
+
+   - No more MCrypt !
+     MCrypt will only be used if available for data encryption.
+     
+   - "Search" module
+     Provided as example, this is a basic word search module.
+     It is very well documented and should help you to build modules for Ionize.
+
+   - Complete rewrite of the Access() lib, which become the Connect() lib.
+     The Connect() lib connects users both on the backend and on the frontend.
+     Formerly, the host needed to have the PHP MCrypt function.
+     Now, the Connect() lib uses the CI Encrypt capabilities.
+
+   - Language based pages URL
+     Each page can have an URL / language
+     URL are built from page and article titles.
+
+   - Some host doesn't accept CHMOD(0777). Removed the CHMOD error catch in application/media.php.
+
+   - Ionize Media Manager : Post the media path instead of passing it by GET.
+
+
+
+2. Installer improvements
+  =======================================
+
+   - The installer generates the global Ionize encryption key (first install)
+
+   - Default language is defined through the installer (first install)
+
+
+
+3. Ionize backend
+  =======================================
+
+   - URL auto-build from the page / article title.
+     The page or article 'ID' becomes the 'URL'.
+     Each page or article URL is localizable
+     
+   - Page / Articles drag'n'drop to create internal links.
+     An article can link to another article or to a page.
+     Simply hold down the mouse on the page name in the structure and drop it in the "link" field of you current edited page or article to create an internal link.
+     The internal link will be available through the <ion:link /> tag of the article or page.
+
+   - Complete rewrite of the Ionize structure manager (page and article tree)
+     - The HTML of the tree is now much lighter (50%), reducing structure loading time
+     - The structre supports now adding / update and removing of items without reloading the complete tree.
+
+   - Integration of HTML syntax highlighting in tinyMCE (CodeMirror plugin)
+
+   - Concept of "menus"
+     Pages are now grouped in menus.
+     2 default menus will be available after a fresh installation : "Main" & "System". These menus can't be deleted.
+     An Ionize upgrade will put all pages in the "Main" menu, so the upgrade will be transparent.
+
+   - View editing / saving from Theme panel
+     The view editing feature is now working well !
+     
+
+
+4. Views and tags
+  =======================================
+   
+   - PHP in views is now possible with the <ion:php /> tag
+     This tag can also be added in articles HTML code : The PHP will be parsed.
+   
+   - Add of the tags :
+     Conditional tags : 	<ion:if condition="..." />
+       						<ion:else />
+     						These tags are currently EXPERIMENTAL. So the best is just test them but not use them.
+     						
+     Article : Read More :	<ion:readmore paragraph="1" term="article_read_more" tag="p" class="readmore" />
+     						In one article, displays a "red more" link to the article if the length of the content of the article is bigger than the "paragrph" attribute limiter.
+     						Used in combination with <ion:article paragraph="1"> (with the paragrph attribute set), this tag is very useful because it will display the "read more" link only
+     						if there is a bigger content to read.
+     						
+     Articles : keep_view :	When you set the Ionize "list_view" setting to a page, every article displayed on this page will use this defined view if more than one article are returned.
+     						This is useful for displaying a list of summary and display the whole article content when clicking on the article, with staying on the same page.
+     						But when you have for example some article in the footer coming from the "footer" page, these articles will also use the "list_view" defined view.
+     						To avoid that, use "keep_view" attribute in the <ion:articles > tag of the footer articles.
+
+   - Navigation : 			<ion:navigation menu="your_menu_code">
+   								<ion:url />
+   							</ion:navigation>
+   							
+   							When not set, the returned navigation items comes from "main" menu.
+   							<ion:url /> returns now the complete absolute URL to the content for the current language
+   
+   - Languages :			<ion:languages>
+   								<ion:url />
+   							</ion:languages>
+   							
+   							<ion:url /> returns now the complete absolute URL to the content in the looped language
+
+
+5. Database
+  =======================================
+
+   We made alot of modification in the databse. Thatfor, you should only install this version from scratch or migrate from a 0.9.4 database to be sure it will works correctly.
+   
+
+
+7. Admin Language files
+  =======================================
+   
+   Add of the following languages terms :
+   
+   In /application/language/xx/admin_lang.php : 
+   - ionize_label_linkto
+   - ionize_label_remove_link
+   - ionize_label_url
+   - ionize_help_url
+   - ionize_label_menu
+   - ionize_message_page_url_exists
+   - ionize_message_page_needs_url_or_title
+   - ionize_message_article_url_exists
+   - ionize_message_no_circular_link
+   - ionize_label_see_online
+   - ionize_menu_menu
+   - ionize_title_menu
+   - ionize_title_existing_menu
+   - ionize_title_add_menu
+   - ionize_button_save_new_menu
+   - ionize_message_menu_saved
+   - ionize_message_menu_not_saved
+   - ionize_message_menu_already_exists
+   - ionize_message_menu_updated
+   - ionize_message_menu_ordered
+   - ionize_message_menu_deleted
+   - ionize_message_menu_not_deleted
+
+
+
+
+
+======================================================================
+
+   Ionize 0.9.4
+
+======================================================================
+
+
+1. Global
+  =======================================
+
+  - Change in the version numbering :
+    The last version was 0.93, the new one is 0.9.4
+  - The webmaster documentation is now complete
+  - Remove of the "Emailrecord" module, which need to be corrected
+
+
+
+2. Installer improvements
+  =======================================
+
+  - The installer checks now the database writing rights.
+  - Database migration from 0.90, 0.92, 0.93
+
+
+
+3. Ionize backend
+  =======================================
+
+  User Interface :
+  - Creation of an "header panel toolbox", which contains the "Save" button of each element
+  - The dashboard gives some infos :
+    - The last connected users
+    - The last 5 updated articles
+    - List of all phantom articles
+  - 
+  - New static translation panel, more userfriendly.
+  - Add the picture filename on edit icon mouse over in page / article pictures list
+  - Corrected the structure displaying
+
+  Users and groups :
+  - User's group add / edition
+  - User's meta data table : Adding a field in this table will add this field as users "meta"
+  - Export of users in csv
+
+  Other :
+  - Write rights errors detection : Advanced settings saving error message contains now the name of the file on which write error occurs.
+  - Corrected missing backend translations
+  - Add the "access_group" to the module config.xml file : Can limit the admin panel of a module to a given group.
+  - If one language code is changed, all the pages, articles, media, categories items will be updated to keep the link with the language.
+  - Add supported medias list (extension) in the Advanced settings of ionize.
+  - When delete a page, the linked articles are available in the dashboard "Phantom articles"
+
+
+
+4. Functionnalities
+  =======================================
+  - Add the attribute "extension" to the <ion:medias /> tag, so the medias can be filtered also on their extension.
+  - if $config['url_suffix'] is defined in /application/config/config.php, the suffixe is added to the URL generated by Ionize
+
+
+5. Corrections
+  =======================================
+
+  - Corrected the categories visibility when articles inside a category is offline.
+  - File upload correction : Replace the ' char by _ in file names after upload with tinyBrowser,
+  - Categories displaying : When articles in one category are all offline, the category will not appear anymore when using the <ion:categories /> tag,
+  - Correction in extended fields : The existing extended fields are now visible
+  - Changed the user's password encryption : based on a salt, and not on the join_date
+
+
+
+6. Database
+  =======================================
+  - Correction of the ion_session table : permit null values in some fields.
+
+
+
+7. Example theme : "HandMade" : 
+  =======================================
+  
+  - Added music, video and files displaying examples

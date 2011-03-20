@@ -1,0 +1,38 @@
+======================================================================
+
+   Ionize 0.9.5 INSTALLATION
+
+======================================================================
+
+
+Requirements
+=======================================
+
+- PHP 5.2.0 or upper
+- MySQL
+- FTP access to your server
+
+
+Installation
+=======================================
+
+1. Copy the ionize zip content to your server
+
+2. Launch http://your-domain/install
+   Follow the install steps
+
+3. Delete the /install folder to use Ionize
+
+
+Troubles
+=======================================
+
+Depending on your server configuration, you should edit the .htaccess file and remove the comment before the line : 
+RewriteBase /
+
+Writing rights :
+The server PHP user should have writing rights on folders :
+/application/config/
+/themes/*
+/files/*
+

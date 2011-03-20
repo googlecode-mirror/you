@@ -1,0 +1,314 @@
+/** 
+ * Hand Made Ionize template CSS
+ * Structure styles
+ *
+ * Design by : 	Partikule Studio, www.partikule.net 
+ *
+ * Text :		#
+ * Titles :		#
+ * Links :		link: 	color: #779e00
+ *				hover : color: #ffffff
+ *						background-color: #8CBE19
+ *
+ */
+
+
+/* Reset */
+
+body {
+	margin:0;
+	padding:0;
+/*	background: url(../images/body_bg.jpg) repeat-x;*/
+	background-color: #777;
+}
+
+ul,ol,dl,li,dt,dd,h1,h2,h3,h4,h5,h6,pre,form,body,html,p,blockquote,fieldset,input,object,iframe { margin: 0; padding: 0; }
+
+a img {	border:none;display:block;}
+
+:focus { outline: none; }
+
+
+/* Containers
+ * ------------------------------------------- */
+
+#container {
+	margin: 0 auto 0 auto;
+	width:920px;
+	text-align: left;
+}
+
+#main {
+	overflow: auto;
+	margin-top:26px;
+	margin-bottom: 10px;
+	width: 870px;
+	clear:both;
+}
+
+#sidebar, #sidebar-home {
+	float:right;
+	position:relative;
+	padding-top:0px;
+}
+#sidebar-home { width:300px; }
+#sidebar { 
+	width:260px; 
+	margin-top:11px;
+}
+
+#content-home { margin-right:330px;}
+#content { margin-right:290px;}
+
+
+/* Logo
+ * ------------------------------------------- */
+#logo {
+	margin: 40px;
+}
+#logo img {
+	display: block;
+	margin-left: 30px;
+}
+
+
+/* Header
+ * ------------------------------------------- */
+
+#header, #header-home {
+	clear: both;
+	position: relative;
+}
+#header-home {
+	background: url(../images/header_bg.jpg) no-repeat top left;
+	height: 370px;
+}
+#header {
+	background: url(../images/header_bg.jpg) no-repeat  left 30%;
+	height: 156px;	
+}
+
+#header-content{
+	width:870px;
+	position: relative;
+}
+
+/* Header pictures */
+#hpicture-container.home,
+#hpicture-container {
+	border: solid 10px #fff;
+	width:510px;
+	position: absolute;
+	right: 0;
+	top:15px;
+	overflow: hidden;
+}
+#hpicture-container.home {
+	height:335px;
+}
+#hpicture-container {
+	height:136px;
+}
+
+#hpicture {
+	position:relative;
+	background-color:#000;
+	overflow: hidden;
+}
+
+#hpicturelist {
+	overflow: hidden;
+	width:510px;
+	height:335px;
+}
+
+#hpictureList.internal {
+	margin-top:-30px;
+}
+
+#hpicturelist img {
+	display:block;
+	float:left;
+}
+
+
+#picture-comment {
+	width:330px;
+	margin-top:150px;
+}
+#picture-comment p{
+	text-align: right;
+	color:#666;
+	font-size: 1.1em;
+}
+
+.picture-button {
+	position: absolute;
+	top:250px;
+	cursor: pointer;
+}
+.picture-button.left {
+	left:300px;
+}
+.picture-button.right {
+	right:10px;
+}
+
+/* Sidebar
+ * -------------------------------------------- */
+.side-bloc{
+	padding:30px 30px 0 30px;
+/*	background: url(../images/shadow_bg.jpg) no-repeat 80% 0;*/
+	background-color: #fff;
+	overflow: auto;
+}
+
+.side-bloc-news 
+{
+	margin-top: 20px;
+}
+.side-bloc-news h3,
+.side-bloc-news p
+{
+	margin-left:55px;
+}
+
+
+/* Date
+ * -------------------------------------------- */
+
+.date {
+	width:40px;
+	float:left;
+	margin-top: 2px;
+	text-align: center;
+}
+.date .day,
+.date .month,
+.date .year
+{
+	color:#000;
+	margin:0;
+	padding: 0;
+}
+
+
+/* SubNavigation and Categories
+ * -------------------------------------------- */
+.sidelist {
+	list-style: none;
+	margin: 5px 0 20px 0;
+}
+.sidelist li {
+	font-size: 1.2em;
+}
+.sidelist li a {
+	display: block;
+	line-height: 1.8em;
+	width: 100%;
+	padding: 0 0 0 3px;
+	border-bottom: solid 1px #E0D8D7;
+}
+
+.sidelist li a.active {
+	color: #000 !important;
+	background-color:#f7f7f7;
+}
+
+
+/* Content
+ * -------------------------------------------- */
+
+.content-top, .content-left {
+	background-color: #181818;
+}
+.content-top {
+	height:11px;
+	margin-right:10px;
+}
+.content-left {
+	height:224px;
+	width:11px;
+	float:left;
+}
+.content-left.small {
+	height:124px;
+}
+
+.articles {
+	margin-left:11px;
+/*	background: url(../images/shadow_bg.jpg) no-repeat 50% 0;*/
+	background-color: #fff;
+	overflow: hidden;
+	min-height: 300px;
+}
+
+.article{
+	padding:30px;
+	overflow: hidden;
+}
+
+.article .pictures{
+	overflow: hidden;
+}
+
+.pagination {
+	margin:20px 25px 0 25px;
+	text-align: right;
+}
+
+.pagination a, .pagination strong {
+	padding:5px;
+}
+
+
+/* Footer
+/* -------------------------------------------- */
+#footer {
+	margin:0 0 20px 11px;
+	padding:5px;
+	background-color: #252525;
+	background: url(../images/header_bg.jpg) no-repeat  left 100%;
+
+/*	border-top: dotted #ccc 1px;*/
+}
+#footer p {
+	color:#aaa;
+	font-size: 1em;
+}
+#footer p span{
+	color:#fff;
+}
+#footer p a {
+	color: #8CBE19;
+	padding:2px;
+	text-decoration: none;
+}
+
+#footer p a:hover {
+	color: #8CBE19;
+	text-decoration: underline;
+	background: none;
+}
+
+
+
+/* Clearing
+   This souldn't be necessary anymore.
+   http://www.positioniseverything.net/easyclearing.html
+ ----------------------------------------- */
+.clear:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clear {display: inline-block;}
+
+/* Hides from IE-mac \*/
+* html .clear {height: 1%;}
+.clear {display: block;}
+/* End hide from IE-mac */
+

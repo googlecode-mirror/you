@@ -1,0 +1,285 @@
+/*
+
+Ionize Form CSS
+
+Copyright:
+	Copyright (c) 2010 Ionize Dev Team.
+	
+License:
+	MIT-style license.
+
+*/
+
+
+
+/* Form layout
+---------------------------------------------------------------- */
+form {
+	width: 100%;
+}
+
+fieldset {
+	border:none;
+}
+
+
+dl.first {
+	margin-top: 10px;
+}
+
+dl.compact {
+	margin:0;
+}
+
+dl {
+	position:relative;
+	margin:1px 0 0;
+	overflow:hidden;
+	margin-bottom:5px;
+/*	min-width: 680px;	*/
+}
+dl.last {
+	padding-bottom:10px;
+}
+dt.small {
+	width:115px;
+}
+dt {
+	clear: left;
+	float:left;
+	margin:0 0 0 0;
+	padding: 0;
+	text-align:right;
+	font-weight: normal;
+/*	width:150px;*/
+	min-width:130px;
+	width:18%;
+}
+dd {
+	margin:0;
+	margin-left: 22%;
+	padding:0;
+	width: 78%;
+}
+
+#sidecolumn dl {
+	min-width: inherit;
+}
+#sidecolumn dl dt {
+	min-width:inherit;
+}
+#sidecolumn dl dd {
+	width:auto;
+	min-width:inherit;
+	margin-left:120px;
+}
+
+/* Mocha Windows correction */
+.mochaContent dd { 
+	width: auto;
+}
+.mochaContent dl {
+	min-width: inherit;
+}
+
+
+/* Form Elements
+---------------------------------------------------------------- */
+
+/* Standard label */
+label {
+	font-size: 11px;
+	margin: 0 10px;
+}
+
+label[for] {
+	cursor: pointer;
+}
+label.required {}
+
+label.help {
+	border-bottom: dotted 1px #94aec9;
+	background: url(../images/icon_12_label_help.png) no-repeat top right;
+	padding-right: 14px;
+}
+label.toggler {
+	display: block;
+}
+
+input, textarea, select {
+	font-family:"lucida grande",tahoma,verdana,arial,sans-serif;
+	font-size:11px;
+}
+input.required, textarea.required, select.required{
+	border-color: #b00;
+}
+
+textarea{
+	border:1px solid #bbb;
+	padding:3px;
+}
+
+.select {
+	border:1px solid #bbb;
+	padding:2px;
+}
+
+#options select {
+	max-width: 150px;
+}
+
+.inputtext {
+	border:1px solid #bbb;
+	padding:3px;
+}
+.inputtext:focus,
+textarea:focus {
+	background-color: #fdfced;
+}
+
+input.date {
+	float:left;
+	margin-right:5px;
+}
+
+.inputcheckbox {}
+.inputradio {}
+
+
+.inputicon {
+	margin:0 0 0 5px;
+}
+/* Cursors */
+.pointer { cursor: pointer;}
+.hand { cursor: hand;}
+.move { cursor: move;}
+
+/* Submit & button */
+.button,
+.submit {
+	-moz-border-radius:4px;
+	font-family:Arial,Helvetica,sans-serif;
+	border:1px solid #fff;
+	margin:0px;
+	color:#FFFFFF;
+	cursor:pointer;
+	font-size:11px;
+	padding:2px 6px;
+	height: 24px;
+	vertical-align: middle;
+}
+
+/* Yes button, No button */
+.button.yes { background:url(../images/button-yes-bg.jpg) no-repeat 0 50%; }
+.button.yes:hover { background:url(../images/button-yes-bg.jpg) no-repeat -200px 50%; }
+
+.button.no { background:url(../images/button-no-bg.jpg) no-repeat 0 50% #bbb;}
+.button.no:hover { background:url(../images/button-no-bg.jpg) no-repeat -200px 50%;}
+
+.button.left {float:left;}
+.button.right {float:right;}
+.button {float:right;margin:0 2px;}
+
+
+/* Standard button and submit button */
+.button { background:url(../images/button-bg.jpg) no-repeat 0 50%; }
+.button:hover {	background:url(../images/button-bg.jpg) no-repeat -200px 50%; }
+
+.submit { background:url(../images/submit-bg.jpg) no-repeat 0 50%; }
+.submit:hover {	background:url(../images/submit-bg.jpg) no-repeat -200px 50%; }
+
+
+/* Toolbar button */
+.toolbar-button {
+	-moz-border-radius:4px;
+	font-family:Arial,Helvetica,sans-serif;
+	border: 1px solid transparent;
+	background-color: transparent;
+	color:#098ED1;
+	margin:0px;
+	cursor:pointer;
+	font-size:11px;
+	padding:2px 6px;
+	height: 24px;
+	vertical-align: middle;
+}
+.toolbar-button.plus {
+	background:url(../images/icon_16_plus.png) no-repeat 4px 50%;
+	padding-left: 24px;
+}
+.toolbar-button.minus {
+	background:url(../images/icon_16_minus.png) no-repeat 4px 50%;
+	padding-left: 24px;
+}
+.toolbar-button:hover {
+	border:1px solid #bbb;
+}
+
+
+
+/* IE Mocha form hacks */
+* html .toolbox .searchField, * html .toolbox .searchButton { /* IE6 Hack */
+	margin-top: -1px;		
+}
+
+* html .toolbox .button { /* IE6 Hack */
+	vertical-align: top;
+	margin-top: 0;			
+}
+
+*:first-child+html .toolbox .searchField, *:first-child+html .toolbox .searchButton { /* IE7 Hack */
+	margin-top: -1px;	
+}
+
+*:first-child+html .toolbox .button { /* IE7 Hack */
+	vertical-align: top;
+	margin-top: 0;	
+}
+
+
+/** Input sizes */
+.w10 {	width:10px; }
+.w20 {	width:20px; }
+.w40 {	width:40px; }
+.w60 {	width:60px; }
+.w80 {	width:80px; }
+.w100 {	width:100px; }
+.w120 {	width:120px; }
+.w140 {	width:140px; }
+.w160 {	width:160px; }
+.w180 {	width:180px; }
+.w200 {	width:220px; }
+.w220 {	width:220px; }
+.w240 {	width:240px; }
+.w260 {	width:260px; }
+.w280 {	width:280px; }
+.w300 {	width:300px; }
+.w320 {	width:320px; }
+.w340 {	width:340px; }
+.w360 {	width:360px; }
+.w380 {	width:380px; }
+.w400 {	width:400px; }
+.w500 {	width:500px; }
+.w600 {	width:600px; }
+
+.h10 {	height:10px; }
+.h20 {	height:20px; }
+.h40 {	height:40px; }
+.h60 {	height:60px; }
+.h80 {	height:80px; }
+.h100 {	height:100px; }
+.h120 {	height:120px; }
+.h140 {	height:140px; }
+.h160 {	height:160px; }
+.h180 {	height:180px; }
+.h200 {	height:220px; }
+.h220 {	height:220px; }
+.h240 {	height:240px; }
+.h260 {	height:260px; }
+.h280 {	height:280px; }
+.h300 {	height:300px; }
+.h320 {	height:320px; }
+.h340 {	height:340px; }
+.h360 {	height:360px; }
+.h380 {	height:380px; }
+.h400 {	height:400px; }

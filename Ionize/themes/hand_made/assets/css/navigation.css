@@ -1,0 +1,115 @@
+/** 
+ * Hand Made Ionize template CSS
+ * Navigation styles
+ *
+ * Design by : 	Partikule Studio, www.partikule.net 
+ *
+ * Text :		#
+ * Titles :		#
+ * Links :		link: 	color: #779e00
+ *				hover : color: #ffffff
+ *						background-color: #8CBE19
+ *
+ */
+
+
+/* Lang menu
+   -------------------------------------------- */
+
+#languages {
+	margin:15px 0 0 5px;
+	overflow: hidden;
+}
+#languages ul {
+	list-style:none;
+	margin: 0;padding: 0;
+}
+#languages ul li {
+	float:left;
+	margin-right:10px;
+	font-size:10px;
+}
+#languages ul li a:link, #languages ul li a:visited {
+	display: block;
+	color:#ddd;
+	text-decoration:none;
+}
+#languages ul li a:hover{
+	color:#eee;
+	text-decoration:underline;
+}
+
+
+/* Main navigation										
+   -------------------------------------------- */
+
+ul#navigation 
+{
+	list-style: none;	
+	display:block;
+	margin: 15px 65px 20px 0;
+	float:right;
+	overflow: hidden;
+}
+ul#navigation li {
+	float:left;
+	margin:0 0 0 10px;
+	padding:0;
+	font-size: 13px;
+	cursor:pointer;
+	letter-spacing: 0.1em;
+}
+ul#navigation li a:link,
+ul#navigation li a:visited {
+	font-size: 13px;
+	padding:6px 17px;
+	margin: 0;
+	text-decoration: none;
+	color:#585858;
+	display:block;
+}
+
+ul#navigation li a:hover {
+	background-color: #8cbe19;
+	color:#fff;
+	text-decoration:none;
+}
+ul#navigation li a.active {
+	background-color: #8cbe19;
+	color:#fff !important;
+}
+
+
+
+ul#submenu {
+	list-style: none;
+	display:block;
+	margin:0;
+	padding:0;
+}
+ul#submenu li {
+	font-family:Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	margin: 0 0 5px 0;
+	padding: 0;
+	text-align:right;
+}
+ul#submenu li a:link,
+ul#submenu li a:visited,
+ul#submenu li a:active {
+	margin: 0;
+	padding:3px 0;
+	text-decoration: none;
+	color:#757269;
+	display:block;
+	border-bottom: solid 1px #fff;
+}
+ul#submenu li a:hover {
+	text-decoration:none;
+	color:#74902e;
+	border-bottom: solid 1px #e0d8d7;
+}
+ul#submenu li a.active {
+	color:#74902e;
+	border-bottom: solid 1px #e0d8d7;
+}
