@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X1.5]]></item>
+	<item id="Time"><![CDATA[2010-09-28 18:38]]></item>
+	<item id="From"><![CDATA[Discuz! Board (http://localhost/dzx15/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[帖子美化]]></item>
+			<item id="identifier"><![CDATA[plbeautify]]></item>
+			<item id="description"><![CDATA[帖子美化之帖子列表页显示头像。
+本插件无需修改文件一键开关帖子列表页中的头像显示。
+如有帖子中其他位置美化适合做进插件的好的建议可以到 http://discuz.net 上提出。]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[plbeautify/]]></item>
+			<item id="copyright"><![CDATA[Comsenz Support Team]]></item>
+			<item id="version"><![CDATA[1.5]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[plbeautify]]></item>
+					<item id="menu"><![CDATA[]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[11]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X1.5]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[图片延时加载的页面]]></item>
+				<item id="description"><![CDATA[选择启用图片延时加载的页面。]]></item>
+				<item id="variable"><![CDATA[lazyloads]]></item>
+				<item id="type"><![CDATA[selects]]></item>
+				<item id="extra"><![CDATA[1=帖子列表页
+2=帖子内容页]]></item>
+				<item id="__value">
+					<item id="0"><![CDATA[1]]></item>
+					<item id="1"><![CDATA[2]]></item>
+				</item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[是否开启帖子列表显示头像]]></item>
+				<item id="description"><![CDATA[选“是”为帖子列表显示头像；
+头像的动态/静态调用方式取决于“后台 =》 站长 =》 UCenter 设置” 里的设置；
+鼠标滑过头像是否显示名片取决于“后台 =》 界面 =》 界面设置 =》 全局” 里的设置。]]></item>
+				<item id="variable"><![CDATA[isopen]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[3]]></item>
+				<item id="title"><![CDATA[开启延时加载图片]]></item>
+				<item id="description"><![CDATA[开启后，以下选择才生效。本功能适用于服务器网络较好的站点，否则请勿开启。]]></item>
+				<item id="variable"><![CDATA[lazyon]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[开启用户等级图文显示]]></item>
+				<item id="description"><![CDATA[开启后帖子内容页个人信息头像下方显示等级长条。]]></item>
+				<item id="variable"><![CDATA[showlv]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[1]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="lvup"><![CDATA[<div style="margin:5px 10px 5px 20px;" title="当前积分为 {$pcredits}，升到下一级还需要 {$needcredit} 点"><div style="float:left;">升级&nbsp;</div><div style="padding-top:2px;float:left;"><img width="2" height="12" src="source/plugin/plbeautify/images/expl.gif"><img width="{$width}" height="12" src="source/plugin/plbeautify/images/expc.gif"><img width="6" height="12" src="source/plugin/plbeautify/images/expr.gif">&nbsp;</div><div>{$cper}%</div></div>]]></item>
+				<item id="thestyle"><![CDATA[<style>.tl .by {width:125px;} .pstyle img {width:25px;height:25px;float:left;border: 1px solid #ccc; padding: 2px; margin: 0px; background-color: #fff;margin:3px 3px 0 0;}</style>]]></item>
+				<item id="style_add"><![CDATA[<script type="text/javascript" src="source/plugin/plbeautify/images/jquery.min.js"></script>
+<script type="text/javascript" src="source/plugin/plbeautify/images/jquery.lazyload.mini.js"></script>
+<script type="text/javascript">
+var jq = jQuery.noConflict();
+  jq(function() {
+	  jq("img").lazyload({
+		 placeholder : "source/plugin/plbeautify/images/grey.gif",
+		 effect      : "fadeIn"
+	  });
+  });
+
+</script>]]></item>
+			</item>
+		</item>
+	</item>
+</root>
