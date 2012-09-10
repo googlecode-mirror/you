@@ -100,8 +100,12 @@ endif
 "=================================================================
 "个人设置开始
 "=================================================================
+
 "更新 vimrc 配置
+" Edit the vimrc file
 map <leader>vimrc :source /home/ziikii/.vimrc<cr>
+map <leader>ev :e /home/ziikii/.vimrc<CR>
+map <leader>sv :so /home/ziikii/.vimrc<CR>
 
 "文件类型自动识别
 filetype plugin on
@@ -123,12 +127,12 @@ set smartindent
 set laststatus=2
 
 ""实现CTRL-S保存操作
-"nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
+imap <C-S> <Esc>:w<CR>
 
 ""实现了CTRL-C、CTRL-V复制粘贴操作的映射
-map <c-c> yy
-inoremap <c-v> <esc>"+p<CR>i
+nmap <C-C> yy
+" inoremap <C-V> :set paste<cr><S-Ins>
+" inoremap <c-v> <esc>"+p<CR>i
 
 "不使用swap文件
 set noswapfile
@@ -153,12 +157,44 @@ set modifiable
 
 "折叠代码方式
 set fdm=marker
+"设置语法折叠
+" set foldmethod=syntax
+
 
 "设置无备份文件
 set writebackup
 
 "自动进入当前编辑文件所在的目录
 map <leader>cd :cd %:p:h<cr>
+
+" -----------------------------------------------------------------
+" 显示回车换行符等特殊符号	
+" -----------------------------------------------------------------
+" 来转换种文件格式
+" set fileformat=unix
+
+" 在默认情况下，Vim认为文件是由行组成的，并且文件最后一行是以<EOL>为结束符的。如果你想设置文件以<EOL>结束符结尾，则可以用以下命令：
+" set endofline
+
+" 如果你想设置文件不以<EOL>结束符来结尾，则可以使用以下命令：
+set noendofline
+
+"如果你使用以下命令进入 <list mode>，那么就可以清楚的看到以“$”表示的换行符和以“^I”表示的制表符。 
+" set list
+
+" 你可以使用以下命令退出<list mode>：
+set nolist
+
+" :%s/\n//g	"删除换行符
+" set textwidth	"设置行宽
+" set textwidth	"设置行边距
+" join	"合并多行
+" J	"合并两行
+
+
+
+
+
 "------------------------------------------------------
 "nt 打开NERDTree
 "------------------------------------------------------
@@ -172,7 +208,7 @@ let NERDTreeShowBookmarks = 1
 "打开文件后是否关闭NerdTree窗口
 let NERDTreeQuitOnOpen = 0
 "让Tree把自己给装饰得多姿多彩漂亮点
-let NERDChristmasTree=1
+" let NERDChristmasTree=1
  "让注释符与语句之间留一个空格
 let NERDSpaceDelims=1 
 "多行注释时样子更好看
@@ -200,9 +236,6 @@ set encoding=utf-8
 set fileencodings=utf-8,chinese,latin-1
 " set fileencoding=utf-8
 "endif
-
-"设置语法折叠
-set foldmethod=syntax
 
 "手动设置折叠
 " set foldmethod=manual 
@@ -335,11 +368,11 @@ map tc :tabclose<cr>
 "窗口跳转
 "按住ctrl键，按一次w键，再按一次表示方向的h或j或k或l 
 "映射光标在窗口间移动的快捷键
-nmap <C-H> <C-W>h
-nmap <C-J> <C-W>j
-nmap <C-K> <C-W>k
-nmap <C-L> <C-W>l
-
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <leader>w <C-w>v<C-w>l
 
 "------------------------------------------------------
 "taglist settings
@@ -405,7 +438,11 @@ imap <C-k> <Up>
 imap <A-h> <Left>
 imap <A-l> <right>
 imap <c-o> <esc>o
-imap <c-s> <esc>:w
+
+
+
+
+
 
 
 
@@ -629,13 +666,31 @@ nmap <leader>jt <Esc>:%!python -m json.tool<CR><Esc>:set filetype=json<CR>
 " :cw                如果有错误列表，则打开quickfix窗口 ( :help :cw )
 " :col               到前一个旧的错误列表 ( :help :col )
 " :cnew              到后一个较新的错误列表 ( :help :cnew ) 
+" " Toggle the quickfix window {{{
+" " From Steve Losh,
+" http://learnvimscriptthehardway.stevelosh.com/chapters/38.html 
 " -----------------------------------------------------------------
 " set makeprg=gcc\ -Wall\ -ohello\ hello.c 
 " autocmd FileType c,cpp  map <buffer> <leader><space> :w<cr>:make<cr>
 " nmap <leader>cn :cn<cr>
 " nmap <leader>cp :cp<cr>
 " nmap <leader>cw :cw 10<cr> 
+nnoremap <C-q> :call <SID>QuickfixToggle()<cr>
 
+let g:quickfix_is_open = 0
+
+function! s:QuickfixToggle()
+    if g:quickfix_is_open
+        cclose
+        let g:quickfix_is_open = 0
+        execute g:quickfix_return_to_window . "wincmd w"
+    else
+        let g:quickfix_return_to_window = winnr()
+        copen
+        let g:quickfix_is_open = 1
+    endif
+endfunction
+" }}}
 
 " -----------------------------------------------------------------
 " Bexec : Execute script in buffer and display output in buffer	
@@ -690,6 +745,12 @@ pwd
 
 " -----------------------------------------------------------------
 
+
+
+" Quickly  get out of insert mode without your fingers having to leave the
+" home row (either use 'jj' or 'jk')
+inoremap jj <Esc>
+inoremap kk <Esc>
 
 " -----------------------------------------------------------------
 " ConqueTerm setting 	
